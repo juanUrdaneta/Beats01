@@ -142,6 +142,14 @@ const updateList = (data)=>{//stands for grid
     })
 }
 
+const showDisclaimer = (show)=>{
+    (show)?document.querySelector(".modal").classList.add("modal--show"):document.querySelector(".modal").classList.remove("modal--show");
+}
+
 window.addEventListener("load",()=>{
     updateList(listData);
+    showDisclaimer(true);
+});
+document.querySelector(".modal_close").addEventListener('click',()=>{
+    showDisclaimer(false);
 });

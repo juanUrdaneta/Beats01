@@ -35,6 +35,7 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
+  z-index: 0;
   height: 100vh;
   width: 100vw; }
 
@@ -394,3 +395,32 @@ body {
           height: .5rem;
           border-radius: 9rem;
           background-color: #737373; }
+
+.modal {
+  z-index: 1;
+  position: fixed;
+  width: 0vw;
+  height: 20vh;
+  background-color: #D94625;
+  top: 10vh;
+  transition: .3s;
+  overflow: hidden;
+  padding: 0; }
+  .modal > h1 {
+    font-size: 4rem;
+    user-select: none;
+    display: inline;
+    color: #F2F2F2; }
+  .modal_text {
+    position: relative;
+    top: 3rem;
+    font-size: 2rem;
+    color: #F2F2F2; }
+  .modal_close {
+    float: right;
+    font-size: 3rem;
+    user-select: none;
+    color: #F2F2F2; }
+  .modal--show {
+    width: 50vw;
+    padding: 3rem; }
