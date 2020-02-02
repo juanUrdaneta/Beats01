@@ -1,0 +1,21 @@
+@mixin respond ($breakpoint){
+    @if $breakpoint = tablet-horizontal{
+        // @media (max-width: 1500px){@content};
+    }
+    @if $breakpoint = tablet-vertical{
+        @media (max-width: 900px){@content};
+    }
+}
+
+
+@mixin menuFontStyle(){
+    position: relative;
+    font-family: $font-lato;
+    color: $color-dark-grey;
+    font-weight: 700;
+    font-size: 1.3rem;
+    letter-spacing: .1rem;
+    margin: 0 1rem 0 1rem;
+    padding: 1rem 0 1rem 0;
+    transition: .3s;    
+}

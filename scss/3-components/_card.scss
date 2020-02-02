@@ -1,0 +1,159 @@
+.card{
+    display:flex;
+    justify-content: space-between;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+
+    &_border{
+        position: absolute;
+        width:100%;
+        height:100%;
+        top:0;
+        left:0;
+        fill: none;
+
+        z-index: 0;
+    
+        &_line{
+            stroke: #737373;
+            stroke-width: 1px;
+        }
+    }
+
+    &_portrait{
+        position: absolute;
+        max-width: 100%;
+        max-height: 100%;
+        left:100%;
+        opacity: 0;
+        transition: .3s;
+        
+        z-index: 1;
+
+        &--show{
+            left:0;
+            opacity: 1;
+        }
+    }
+
+    &_title{
+        position: relative;
+        display:flex;
+        align-items: center;
+        top:0;
+        width: 100%;
+        padding:3rem;
+        z-index: 2;
+        box-sizing:border-box;
+        &_text{
+            font-family: $font-lato;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color:$color-dark;
+            width: 100%;
+            user-select: none;
+            &--white{
+                color:#F2F2F2;
+            }
+        }
+        &_genre-text{
+            font-family: $font-lato;
+            font-size: 1.5rem;
+            color:#535353;
+            user-select: none;
+        }
+        &_add{
+            position: absolute;
+            right: 3rem; 
+            font-family: $font-lato;
+            font-size: 4rem;
+            user-select: none;
+            &--white{
+                color:#F2F2F2;
+            }
+        }
+    }
+
+    &_bottom{
+        position: relative;
+        display:flex;
+        align-items: center;
+        top:0;
+        width: 100%;
+        padding:3rem;
+        box-sizing:border-box;
+        z-index: 2;
+        &_date{
+            font-family: $font-lato;
+            font-size: 1rem;
+            color:#737373;
+            user-select: none;
+
+            &::before{
+                content:"[";
+            }
+            &::after{
+                content:"]";
+            }
+        }
+        &_portrait{
+            position: absolute;
+            right:3rem;
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            &--hide{
+                visibility: hidden;
+            }
+        }
+        &_play{
+            position: absolute;
+            right: 3rem;
+            font-family: $font-lato;
+            font-size: 1.2rem;
+            color:#737373;
+            text-decoration: underline;
+            user-select: none;
+            visibility: hidden;
+            &--show{
+                visibility: visible;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &_cover{
+        position: absolute;
+        right:0;
+        top:1rem;
+        width: 0%;
+        height: 100%;
+        background-color: $color-light-grey;
+        z-index: 3;
+    }
+
+    &-content-animation{
+        &--part-one{
+            animation-name: coverAnim;
+            animation-duration: $card-update-time;
+            animation-timing-function: linear;
+            &--back{
+                animation-delay: $card-update-time;
+                animation-direction: reverse;
+            }
+        }
+        &--part-two{
+            animation-name: textAnim;
+            animation-duration: $card-update-time;
+            animation-delay: $card-update-time;
+            animation-timing-function: linear;
+            &--back{
+                animation-delay: unset;
+                animation-direction: reverse;
+            }
+        }
+    }
+}

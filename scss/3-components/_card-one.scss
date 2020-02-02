@@ -1,0 +1,38 @@
+.card-one{
+    display: flex;
+    &_button-wrapper{
+        bottom:0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding:3rem;
+        
+        &_buttons{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        
+            &_up,&_down{
+                font-family: $font-lato;
+                margin-right: 2rem;
+                height: 4rem;
+                font-size: 3rem;
+                user-select: none;
+                transition: .2s;
+                vertical-align: middle;
+                &:active{
+                    transform: scale(1.05);
+                }
+        
+            }
+        
+        }
+    }
+    &_list-size{
+        font-family: $font-lato;
+        font-size: 1.5rem;
+        font-weight: 700;
+        user-select: none;
+    }
+}

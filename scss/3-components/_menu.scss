@@ -1,0 +1,70 @@
+.menu{
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    align-items: center;
+    width: 88vw;
+    height: 8vh;
+    &_nav{
+        display: flex;
+        list-style-type: none;
+        user-select: none;
+        
+        &_item{
+            @include menuFontStyle();
+
+            &_border{
+                position: absolute;
+                top:0;
+                width: 0;
+                height: 100%;
+                transition: .3s;
+                &_line{
+                    stroke: $color-dark;
+                    stroke-width: 5px;
+                }
+                &--show{
+                    width: 100%;
+                }
+            }
+
+            &--selected{
+                color:$color-dark;
+            }
+
+            &:active{
+                transform: scale(1.05);
+            }
+
+            &:nth-child(1){
+                margin-left: 0;
+            }
+        }
+    }
+
+    &_on-air{
+        @include menuFontStyle();
+        user-select: none;
+        display: flex;
+        align-items: center;
+    }
+
+    &_user-menu{
+        display:flex;
+        list-style-type:  none;
+        user-select: none;
+        align-items: center;
+        &_item{
+            @include menuFontStyle();
+
+            &--selected{
+                color: $color-dark;
+            }
+
+            &:active{
+                transform: scale(1.05);
+            }   
+        }
+    }
+
+}

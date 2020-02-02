@@ -1,0 +1,14 @@
+.grid{
+    width: 168vh;
+    height: 84vh;
+    display: grid;
+    position: relative;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    transition: .3s;
+
+    &--hide{
+        left:-100%;
+    }
+
+}

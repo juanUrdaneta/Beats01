@@ -1,0 +1,19 @@
+@keyframes coverAnim{
+    0%{
+        width:0%
+    }
+    100%{
+        width: 99%;
+    }
+}
+
+@keyframes textAnim{
+    0%{
+        opacity:0;
+        top:1.5rem;
+    }
+    100%{
+        top:0;
+        opacity: 1;
+    }
+}
